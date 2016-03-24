@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="home">
+    <!-- <h3>Home</h3> -->
+    <h2>Welcome to Brief_Case</h2>
+    <center>
+      <p>Click on <a href="{{ url_for('ussc') }}">USSC Summaries</a> if you are interested in some sample Brief_Case summaries.</p>
+      <h3>Have a case you need briefed?</h3>
+      <p>Paste your case below and we will snip out the best parts for you.</p>
+      <!-- <div id="spin-load">
+        <img src="{{url_for("static", filename="imgs/spin-load.gif")}}" alt="loading brief" ></img>
+        <span>briefing ... please wait</span>
+      </div -->
+      <form action="/brief_case" method='POST'>
+          <!-- <input type="text" name="case_text" /> -->
+          <textarea class="case-text" name=case_text></textarea>
+          <br>
+          <input id="brief-it" type="submit" value="Brief This Case" id="btnbrief"/>
+      </form>
+    </center>
+  </div>
+{% endblock %}

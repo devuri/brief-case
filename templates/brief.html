@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="brief">
+    <h3>Brief</h3>
+
+    <div id="at-a-glance">
+      <div id="keywords">
+        <p class="subheading">KEYWORDS</p>
+        <p class="keywords">{{kwords}}</p>
+        <br>
+      </div>
+
+      <div id="brief-case-summary" class="summary">
+        <p class="subheading">BRIEF_CASE SUMMARY</p>
+        <ul>
+          {% for sent in summary_sents %}
+          <li>{{sent}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div id="gensim-summary" class="summary">
+        <p class="subheading">GENSIM'S SUMMARY</p>
+        <ul>
+          {% for sent in gensim_summary_sents %}
+          <li>{{sent}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <br>
+    </div>
+
+    <br>
+
+    <div id="highlighted-case">
+      <p class="subheading">HIGHLIGHTED CASE</p>
+      {% for line in highlighted %}
+        {% if line[0] == 1 %}
+          <span style="background-color:lightblue;">{{line[1]}}</span>
+          <p></p>
+        {% else %}
+          <span>{{line[1]}}</span>
+        {% endif %}
+      {% endfor %}
+      <br>
+    </div>
+
+    <!-- <div id="gensim-highlighted-case">
+      <p class="subheading">Gensim Highlighted</p>
+      {% for line in gensim_highlighted %}
+        {% if line[0] == 1 %}
+          <span style="background-color:lightblue;">{{line[1]}}</span>
+          <p></p>
+        {% else %}
+          <span>{{line[1]}}</span>
+        {% endif %}
+      {% endfor %}
+      <br>
+    </div> -->
+  </div>
+{% endblock %}

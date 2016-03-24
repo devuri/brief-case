@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Brief_Case</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1 class="logo">Brief_Case</h1>
+        <img src="{{ url_for('static', filename="imgs/bc.png") }}" alt="brief-case" height="30"></img>
+        <img src="{{ url_for('static', filename="imgs/menu-list.png" )}}" id="menu-icon" alt="menu"></img>
+        <div class="clearfix"></div>
+        <span class="tagline">A Case Summarizer for Legal Professionals</span>
+        <nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('index') }}" id="homelink" class="notcurrent">Home</a></li>
+            <li><a href="{{ url_for('about') }}" id="aboutlink" class="notcurrent">About</a></li>
+            <li><a href="{{ url_for('ussc') }}" id="ussclink" class="notcurrent">USSC Summaries</a></li>
+          </ul>
+        </nav>
+        <div class="clearfix"></div>
+      </header>
+
+      <div class="content">
+        {% block content %}
+        {% endblock %}
+      </div>
+
+      <div class="clearfix"></div>
+
+    </div>
+  </body>
+</html>
